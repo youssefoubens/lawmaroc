@@ -1,0 +1,207 @@
+/* app/styles/generate-document.css */
+
+.generate-document-page {
+    max-width: 56rem;
+    margin: 0 auto;
+    padding: 1rem;
+    font-family: 'Tajawal', sans-serif;
+}
+
+.page-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    text-align: right;
+}
+
+.page-description {
+    font-size: 1.125rem;
+    color: #4a5568;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    text-align: right;
+}
+
+.document-generator {
+    background: white;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+.document-type-selector {
+    margin-bottom: 2rem;
+}
+
+.document-type-selector label {
+    display: block;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+}
+
+.document-type-selector select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.document-type-selector select:focus {
+    outline: none;
+    border-color: #2c3e50;
+    box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.1);
+}
+
+.document-form {
+    margin-top: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #2c3e50;
+    box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.1);
+}
+
+.generate-button {
+    background-color: #27ae60;
+    color: white;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.generate-button:hover {
+    background-color: #219653;
+}
+
+.generate-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.spinner-icon {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.document-ready {
+    background-color: #f0fff4;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-top: 2rem;
+    border: 1px solid #c6f6d5;
+}
+
+.document-ready h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.document-ready p {
+    color: #2f855a;
+    margin-bottom: 1rem;
+}
+
+.download-button {
+    background-color: #3498db;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.2s;
+}
+
+.download-button:hover {
+    background-color: #2980b9;
+}
+
+.document-note {
+    font-size: 0.875rem;
+    color: #718096;
+    margin-top: 0.75rem;
+}
+
+.important-notes {
+    background-color: #ebf8ff;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+}
+
+.important-notes h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.important-notes ul {
+    list-style-type: disc;
+    padding-right: 1.5rem;
+    color: #4a5568;
+    line-height: 1.7;
+}
+
+.important-notes li {
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 1.75rem;
+    }
+
+    .page-description {
+        font-size: 1rem;
+    }
+
+    .document-generator {
+        padding: 1.5rem;
+    }
+}
