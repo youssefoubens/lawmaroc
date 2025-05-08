@@ -177,7 +177,9 @@ export default function GenerateDocumentPage() {
     setRecommendedDocId(null);
 
     try {
+    
       const response = await fetch('/api/ai', {
+        
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

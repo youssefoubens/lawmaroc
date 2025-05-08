@@ -1,4 +1,3 @@
-// app/api/ai/route.ts
 import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
 
@@ -40,10 +39,19 @@ const documentTypes = [
 ];
 
 export async function POST(req: Request) {
+  // Handle CORS preflight request
+  if (req.method === 'OPTIONS') {
+    const headers = new Headers();
+    headers.set('Access-Control-Allow-Origin', '*');
+    headers.set('Access-Control-Allow-Methods', 'POST, OPTIONS');
+    headers.set('Access-Control-Allow-Headers', 'Content-Type');
+    return new Response(null, { headers });
+  }
+
   try {
     const { message } = await req.json();
-
-    // First try to match with keywords for simple cases
+    
+    // Simple keyword matching
     const matchedDoc = documentTypes.find(doc => 
       doc.keywords.some(keyword => message.includes(keyword))
     );
@@ -55,7 +63,7 @@ export async function POST(req: Request) {
       });
     }
 
-    // For more complex queries, use OpenAI
+    // AI processing for complex queries
     const completion = await openai.chat.completions.create({
       messages: [
         {
@@ -70,7 +78,7 @@ export async function POST(req: Request) {
           content: message
         }
       ],
-      model: "gpt-3.5-turbo",
+      model: "gpt-4o",
     });
 
     const aiResponse = completion.choices[0]?.message?.content || "عذرًا، لم أتمكن من معالجة طلبك. يرجى المحاولة مرة أخرى.";
