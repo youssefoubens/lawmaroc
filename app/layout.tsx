@@ -3,13 +3,13 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
-import { AuthProvider } from "@/app/context/AuthContext"; // ✅ Import AuthProvider
+import { AuthProvider } from "@/hooks/useAuth";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Moroccan Legal Help",
-  description: "Your digital legal assistant for Moroccan law",
+  title: "المساعدة القانونية المغربية - Moroccan Legal Help",
+  description: "منصة رقمية للخدمات القانونية في المغرب - Digital platform for legal services in Morocco",
 };
 
 export default function RootLayout({
@@ -18,9 +18,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ar" dir="rtl">
       <body className={`${inter.className} min-h-screen flex flex-col`}>
-        <AuthProvider> {/* ✅ Wrap everything inside AuthProvider */}
+        <AuthProvider>
           <Navbar />
           <main className="flex-grow container mx-auto px-4 py-8">
             {children}
